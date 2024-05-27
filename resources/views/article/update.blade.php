@@ -11,7 +11,7 @@
     <div class="container   ">
       <div class="row">
         <div class="col s12">
-          <h1> AJOUTER UN ARTICLE</h1>
+          <h1> MODIFIER UN ARTICLE</h1>
           <hr>
 
           {{-- @if(session('status'))
@@ -26,34 +26,28 @@
             @endforeach
           </ul>
 
-          <form action="/ajouter/traitement" methode="POST" class="form-group"> 
+          <form action="/update/traitement" method="POST" class="form-group">
             @csrf
+            <input type="hidden" name="id" value="{{ $article->id }}">
+            
+      
             <div class="mb-3">
               <label for="nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="nom" name="nom">
+              <input type="text" class="form-control" id="nom" name="nom" value="{{ $article->nom }}">
             </div>
+      
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="description" name="description">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" name="description" value="{{ $article->description }}">
             </div>
+      
             <div class="mb-3">
-                <label for="a_la_une" class="form-label">A la une</label>
-                <input type="text" class="form-control" id="a_la_une" name="a_la_une">
+              <label for="a_la_une" class="form-label">À la une</label>
+              <input type="text" class="form-control" id="a_la_une" name="a_la_une" value="{{ $article->a_la_une }}">
             </div>
-            <div class="mb-3">
-                <label for="url_image" class="form-label">Image</label>
-                <input type="text" class="form-control" id="url_image" name="url_image">
-            </div>
-
-            <br>
-
-            <button type="submit" class="btn btn-primary">Ajouter un article</button>
-
-            <br> <br>
-
-            <a href="/article" class="btn btn-danger" >Revenir à la liste des artcles</a>
+      
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
           </form>
-
         </div>
        
       </div>
