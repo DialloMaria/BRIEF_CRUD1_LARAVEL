@@ -30,4 +30,13 @@ class ArticleController extends Controller
         return redirect('/ajouter')->with('status','l"article a étè ajouter avec succes');
 
      }
+
+
+     public function delete_article($id){
+        $article= Article::find($id);
+        $article->delete();
+
+        return redirect('/article')->with('status','l"article a étè supprimé avec succes');
+
+     }
 }
