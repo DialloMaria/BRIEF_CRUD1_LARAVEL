@@ -41,9 +41,22 @@
               <input type="text" class="form-control" id="description" name="description" value="{{ $article->description }}">
             </div>
       
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label for="a_la_une" class="form-label">À la une</label>
               <input type="text" class="form-control" id="a_la_une" name="a_la_une" value="{{ $article->a_la_une }}">
+            </div> --}}
+
+            <div class="mb-3">
+                <label for="a_la_une" class="form-label">A la une</label>
+                <select class="form-control" id="a_la_une" name="a_la_une">
+                  <option value="Non" {{ $article->a_la_une == 'Non' }}>Non</option>
+                  <option value="Oui" {{ $article->a_la_une == 'Oui' }}>Oui</option>
+                </select>
+              </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Image</label>
+                <input type="text" class="form-control" id="url_image" name="url_image" value="{{ $article->url_image }}">
             </div>
       
             <button type="submit" class="btn btn-primary">Mettre à jour</button>

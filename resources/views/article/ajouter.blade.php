@@ -36,10 +36,17 @@
                 <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" id="description" name="description">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="a_la_une" class="form-label">A la une</label>
                 <input type="text" class="form-control" id="a_la_une" name="a_la_une">
-            </div>
+            </div> --}}
+            <div class="mb-3">
+                <label for="a_la_une" class="form-label">A la une</label>
+                <select class="form-control" id="a_la_une" name="a_la_une">
+                  <option value="Non">Non</option>
+                  <option value="Oui">Oui</option>
+                </select>
+              </div>
             <div class="mb-3">
                 <label for="url_image" class="form-label">Image</label>
                 <input type="text" class="form-control" id="url_image" name="url_image">

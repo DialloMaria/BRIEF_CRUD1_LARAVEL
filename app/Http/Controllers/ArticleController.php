@@ -17,15 +17,12 @@ class ArticleController extends Controller
      }
 
      public function ajouter_article_traitement(Request $request){
-
         $article= new Article();
-         
         $article->url_image = $request->url_image;
         $article->nom = $request->nom;
         $article->description = $request->description;
         $article->a_la_une = $request->a_la_une;
         // $article->nom = $request->nom;
-
         $article->save();
 
         return redirect('/ajouter')->with('status','l"article a étè ajouter avec succes');
